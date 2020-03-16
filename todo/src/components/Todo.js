@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import './Todo.css';
 
 const Box = styled.div`
 border: solid black 1px;
@@ -15,7 +16,7 @@ export default function Todo(props) {
 
 
     return (
-        <Box onClick = {() => props.toggleStatus(props.data.id)}>
+        <Box onClick = {() => props.toggleStatus(props.data.id)} className = {props.data.completed ? 'complete' : 'incomplete'}>
             <p>ID: {props.data.id}</p>
             <p>Item: {props.data.item}</p>
             <p>Status: {props.data.completed ? 'Complete' : 'Pending'}</p>

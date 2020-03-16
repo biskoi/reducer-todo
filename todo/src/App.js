@@ -7,24 +7,24 @@ import {reducer, initialState} from './reducers/reducer';
 
 function App() {
 
-const [Todos, dispatch] = useReducer(reducer, initialState);
-console.log(Todos);
+  const [Todos, dispatch] = useReducer(reducer, initialState);
+  console.log(Todos);
 
-const addTask = (newTodo) => {
-dispatch({type: 'ADD_TASK', payload: newTodo})
-}
+  const addTask = (newTodo) => {
+    dispatch({type: 'ADD_TASK', payload: newTodo})
+  }
 
-const toggleStatus = (taskId) => {
-dispatch({type: 'TOGGLE_STATUS', payload: taskId})
-}
+  const toggleStatus = (taskId) => {
+    dispatch({type: 'TOGGLE_STATUS', payload: taskId})
+  }
 
-const removeCompleted = () => {
-  dispatch({type: 'REMOVE_COMPLETED'})
-}
+  const removeCompleted = () => {
+    dispatch({type: 'REMOVE_COMPLETED'})
+  }
 
   return (
     <div className="App">
-      <p>AAAA</p>
+      <p>Todo List</p>
       <TodoForm addTask = {addTask} removeCompleted = {removeCompleted}/>
       <TodoList data = {Todos} toggleStatus = {toggleStatus}/>
     </div>

@@ -13,14 +13,13 @@ const submitHandler = e => {
     e.preventDefault();
     // alert(`submitted ${newTodo}`)
     props.addTask(newTodo)
-    setNewTodo('')
+    setNewTodo('');
 }
 
 return (
     <div>
-        <p>this is the todo form</p>
         <form onSubmit = {submitHandler}>
-            <input onChange = {changeHandler}/>
+            <input onChange = {changeHandler} value = {newTodo}/>
             <button type = 'submit'>Submit</button>
             <button type = 'button' onClick = {props.removeCompleted}>Remove Completed</button>
         </form>

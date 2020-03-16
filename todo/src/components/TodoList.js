@@ -8,13 +8,13 @@ flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 border: solid black 1px;
+margin: 2%;
 `;
 
 export default function TodoList(props) {
 
     return (
-        <>
-        <p>this is the todo list</p>
+        <>  
         <Container>
         {props.data.map((item, index) => (
             <Todo data = {item} key = {index} toggleStatus = {props.toggleStatus}/>
